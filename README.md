@@ -1,2 +1,3 @@
 # Algorithms-and-Data-Structures
-Codes
+Important algorithms and data structures.
+
