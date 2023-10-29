@@ -8,12 +8,12 @@ using namespace std;
 const int N = 3003;
 
 void solve() {
-    
+
 }
 
 main() {
     int tests = 1;
-    cin>>tests;
+    cin >> tests;
     while (tests--) {
         solve();
     }

@@ -1,20 +1,24 @@
-int t_low[N],t_in[N],timer;
-void DFS(int v,int c){
-    used[v]=1;
-    t_low[v]=timer;
-    t_in[v]=timer;
+const int N = 2e5 + 1;
+
+int t_low[N], t_in[N], used[N], timer;
+map<pair<int, int>, bool> is_bridge;
+vector<int> g[N];
+
+void DFS(int v, int c) {
+    used[v] = 1;
+    t_low[v] = timer;
+    t_in[v] = timer;
     timer++;
-    for(int k=0;k<g[v].size();k++){
-        if(used[g[v][k]]==1 && c!=g[v][k])
-            t_low[v]=min(t_low[v],t_in[g[v][k]]);
-        if(used[g[v][k]]==0){
-            DFS(g[v][k],v);
-            t_low[v]=min(t_low[v],t_low[g[v][k]]);
-            if(t_in[v]<t_low[g[v][k]]){
-                mp[{v,g[v][k]}]=1;
-                mp[{g[v][k],v}]=1;
+    for (int to: g[v]) {
+        if (used[to] && c != to)
+            t_low[v] = std::min(t_low[v], t_in[to]);
+        else if (!used[to]) {
+            DFS(to, v);
+            t_low[v] = std::min(t_low[v], t_low[to]);
+            if (t_in[v] < t_low[to]) {
+                is_bridge[{v, to}] = true;
+                is_bridge[{to, v}] = true;
             }
         }
-
     }
 }
