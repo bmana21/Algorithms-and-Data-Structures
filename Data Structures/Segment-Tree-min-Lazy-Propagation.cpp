@@ -3,7 +3,7 @@ const int N = 2e5 + 1;
 int t[4 * N], lazy[4 * N], a[N];
 
 
-void build(int v, int tl, int tr) {
+void build(int v) {
     if (tl == tr)
         t[v] = a[tl];
     else {
@@ -30,7 +30,7 @@ void update(int v, int tl, int tr, int l, int r, int new_value) {
         t[v] += new_value, lazy[v] += new_value;
     else {
         if (l > r)return;
-        push(v, tl, tr);
+        push(v);
         int tm = (tl + tr) / 2;
         update(v * 2, tl, tm, l, min(tm, r), new_value);
         update(v * 2 + 1, tm + 1, tr, max(tm + 1, l), r, new_value);
@@ -44,7 +44,7 @@ int get_min(int v, int tl, int tr, int l, int r) {
         return LONG_LONG_MAX;
     if (tl == l && tr == r)
         return t[v];
-    push(v, tl, tr);
+    push(v);
     int tm = (tl + tr) / 2;
     return min(get_min(v * 2, tl, tm, l, min(tm, r)), get_min(v * 2 + 1, tm + 1, tr, max(l, tm + 1), r));
 }
