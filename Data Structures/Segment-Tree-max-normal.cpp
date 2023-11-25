@@ -33,6 +33,6 @@ int get(int v, int i, int j, int l, int r) {
     if (i == l && j == r)
         return t[v];
     int mid = (i + j) / 2;
-    return max(get(v * 2, i, mid, l, std::min(mid, r)),
-               get(v * 2 + 1, mid + 1, j, std::max(mid + 1, l), r));
+    return max(get(v * 2, i, mid, l, min(mid, r)),
+               get(v * 2 + 1, mid + 1, j, max(mid + 1, l), r));
 }
