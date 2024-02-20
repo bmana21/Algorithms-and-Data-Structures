@@ -1,0 +1,29 @@
+{
+    "name": "Mike #5568",
+    "symbol": "MKT",
+    "description": "Please Work",
+    "seller_fee_basis_points": 500,
+    "image": "https://phantom-marca.unidadeditorial.es/ff3f61da0674282df31ef93ed5b2faec/resize/828/f/jpg/assets/multimedia/imagenes/2023/11/30/17013072885468.jpg",
+    "external_url": "https://phantom-marca.unidadeditorial.es/ff3f61da0674282df31ef93ed5b2faec/resize/828/f/jpg/assets/multimedia/imagenes/2023/11/30/17013072885468.jpg",
+    "attributes": [
+        {
+            "trait_type": "Tyson",
+            "value": "Human"
+        }
+    ],
+    "properties": {
+        "creators": [
+            {
+                "address": "9Qq5xMAjZycEH9b7kB6uB1iQXHpqs6mVsV2pjBT4sHfE",
+                "share": 100
+            }
+        ],
+        "files": [
+            {
+                "uri": "https://phantom-marca.unidadeditorial.es/ff3f61da0674282df31ef93ed5b2faec/resize/828/f/jpg/assets/multimedia/imagenes/2023/11/30/17013072885468.jpg",
+                "type": "image/jpg"
+            }
+        ],
+        "category": "image"
+    }
+}
