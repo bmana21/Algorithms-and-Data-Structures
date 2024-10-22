@@ -30,7 +30,7 @@ int lca(int a, int b) {
         return b;
 
     int t = a;
-    for (int k = lg; k >= 0; k--) {
+    for (int k = lg - 1; k >= 0; k--) {
         if (dp[t][k] != 0) {
             int to = dp[t][k];
             if (!isAncestor(to, b))
@@ -41,7 +41,7 @@ int lca(int a, int b) {
 }
 
 int lift(int v, int dist) {
-    for (int k = lg; k >= 0; k--) {
+    for (int k = lg - 1; k >= 0; k--) {
         if (dist >= (1 << k)) {
             v = dp[v][k];
             dist -= 1 << k;
