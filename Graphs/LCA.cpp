@@ -31,7 +31,7 @@ int lca(int a, int b) {
     if (isAncestor(b, a))
         return b;
     int t = a;
-    for (int k = lg; k >= 0; k--) {
+    for (int k = lg - 1; k >= 0; k--) {
         if (dp[t][k] != 0) {
             int to = dp[t][k];
             if (!isAncestor(to, b))
