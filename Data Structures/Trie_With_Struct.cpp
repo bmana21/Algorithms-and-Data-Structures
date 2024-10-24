@@ -23,7 +23,8 @@ struct TrieNode {
 
     }
 
-    // Add String In The Trie With Value d (example: int data = trie.get("HelloWorld"); )
+    // Get String Value That Is Added In Trie (-1 If It Is Not Added).
+    // (example: int data = trie.get("HelloWorld"); )
     int get(const string &s, int pos = 0) {
         if (s.size() == pos) {
             return data;
